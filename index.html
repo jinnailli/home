@@ -4,49 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QbRuby</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #ffffff;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
       text-align: center;
+      padding: 20px;
     }
 
     h1 {
       font-size: 4rem;
-      margin: 0;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
     }
 
     p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.85;
+    }
+
+    .btn {
+      background-color: #ff4b2b;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #ff3a1f;
     }
 
     footer {
       position: absolute;
       bottom: 20px;
       font-size: 0.9rem;
-      opacity: 0.6;
+      opacity: 0.5;
     }
   </style>
 </head>
 <body>
   <h1>QbRuby</h1>
-  <p>Hello World</p>
+  <p>Crafting Elegant Digital Experiences</p>
+  <a href="#!" class="btn">Explore More</a>
 
   <footer>
-    &copy; 2025 QbRuby. All rights reserved.
+    &copy; 2025 QbRuby Inc. All rights reserved.
   </footer>
 
-  <!-- 예: main.js?v=2 -->
-  <script src="main.js?v=2"></script>
+  <!-- 예: main.js?v=1 -->
+  <script src="main.js?v=1"></script>
 </body>
 </html>
