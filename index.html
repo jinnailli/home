@@ -117,6 +117,13 @@
         document.getElementById(key).innerText = translations[lang][key];
       }
     }
+
+    // 자동 언어 감지 및 적용
+    window.addEventListener('DOMContentLoaded', () => {
+      const userLang = navigator.language || navigator.userLanguage;
+      const langCode = userLang.startsWith('ko') ? 'ko' : 'en';
+      setLang(langCode);
+    });
   </script>
 
 </body>
