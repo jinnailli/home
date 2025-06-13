@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QbRuby - Support</title>
+  <title>QbRuby Co., Ltd. - Support</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,13 +18,23 @@
       padding: 2rem 1rem;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { margin: 0.5rem 0 0; font-size: 1.2rem; }
+    .lang-switch {
+      margin-top: 1rem;
     }
-    header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
+    .lang-switch button {
+      margin: 0 5px;
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #fff;
+      color: #6a1b9a;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .lang-switch button:hover {
+      background-color: #ddd;
     }
     main {
       padding: 2rem 1rem;
@@ -36,19 +44,10 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       border-radius: 8px;
     }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #6a1b9a;
-    }
-    a {
-      color: #6a1b9a;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    section { margin-bottom: 2rem; }
+    h2 { color: #6a1b9a; }
+    a { color: #6a1b9a; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     footer {
       text-align: center;
       padding: 1rem;
@@ -57,34 +56,36 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      main {
-        padding: 1rem;
-      }
+      header h1 { font-size: 2rem; }
+      main { padding: 1rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>QbRuby Inc.</h1>
-    <p>Creative Puzzle Games for Curious Minds</p>
+    <h1>QbRuby Co., Ltd.</h1>
+    <p id="tagline">Creative Games for Curious Minds</p>
+    <div class="lang-switch">
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('ko')">한국어</button>
+    </div>
   </header>
 
   <main>
     <section>
-      <h2>About Us</h2>
-      <p>
-        QbRuby is a game development company dedicated to crafting intellectually stimulating and beautifully designed puzzle games. 
-        We believe in the power of thoughtful challenges to inspire and entertain.
+      <h2 id="about-title">About Us</h2>
+      <p id="about-text">
+        QbRuby Co., Ltd. is a game development studio focused on crafting intellectually stimulating and beautifully designed games.
+        We create experiences that challenge, inspire, and entertain.
       </p>
     </section>
 
     <section>
-      <h2>Support</h2>
-      <p>If you need assistance, have questions, or want to get in touch, please reach out to us at:</p>
+      <h2 id="support-title">Support</h2>
+      <p id="support-text">
+        If you need assistance or have questions, please contact us:
+      </p>
       <p><strong>Email:</strong> <a href="mailto:support@qbruby.com">support@qbruby.com</a></p>
     </section>
   </main>
@@ -92,6 +93,31 @@
   <footer>
     &copy; 2025 QbRuby Co., Ltd. All rights reserved.
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        tagline: "Creative Games for Curious Minds",
+        "about-title": "About Us",
+        "about-text": "QbRuby Co., Ltd. is a game development studio focused on crafting intellectually stimulating and beautifully designed games. We create experiences that challenge, inspire, and entertain.",
+        "support-title": "Support",
+        "support-text": "If you need assistance or have questions, please contact us:"
+      },
+      ko: {
+        tagline: "호기심 많은 마음을 위한 창의적인 게임",
+        "about-title": "회사 소개",
+        "about-text": "QbRuby Co., Ltd.는 창의적이고 몰입도 높은 게임을 개발하는 스튜디오입니다. 저희는 재미와 감동을 함께 전달하는 경험을 만듭니다.",
+        "support-title": "지원",
+        "support-text": "문의 사항이나 도움이 필요하신 경우 다음으로 연락해 주세요:"
+      }
+    };
+
+    function setLang(lang) {
+      for (const key in translations[lang]) {
+        document.getElementById(key).innerText = translations[lang][key];
+      }
+    }
+  </script>
 
 </body>
 </html>
