@@ -2,77 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QbRuby</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QbRuby - Support</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
-
     body {
-      font-family: 'Raleway', sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
     }
-
-    h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-    }
-
-    p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      opacity: 0.85;
-    }
-
-    .btn {
-      background-color: #ff4b2b;
+    header {
+      background-color: #6a1b9a;
       color: white;
-      padding: 14px 28px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #6a1b9a;
+    }
+    a {
+      color: #6a1b9a;
       text-decoration: none;
     }
-
-    .btn:hover {
-      background-color: #ff3a1f;
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
     }
 
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.9rem;
-      opacity: 0.5;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>QbRuby</h1>
-  <p>Crafting Elegant Digital Experiences</p>
-  <a href="#!" class="btn">Explore More</a>
+
+  <header>
+    <h1>QbRuby Inc.</h1>
+    <p>Creative Puzzle Games for Curious Minds</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>
+        QbRuby is a game development company dedicated to crafting intellectually stimulating and beautifully designed puzzle games. 
+        We believe in the power of thoughtful challenges to inspire and entertain.
+      </p>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <p>If you need assistance, have questions, or want to get in touch, please reach out to us at:</p>
+      <p><strong>Email:</strong> <a href="mailto:support@qbruby.com">support@qbruby.com</a></p>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 QbRuby Inc. All rights reserved.
   </footer>
 
-  <!-- 예: main.js?v=1 -->
-  <script src="main.js?v=1"></script>
 </body>
 </html>
