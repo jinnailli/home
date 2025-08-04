@@ -2,10 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QbRuby - Contact</title>
+  <title>QbRuby Co., Ltd. - Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="canonical" href="https://www.qbruby.com/contact.html"/>
-  <!-- 동일하게 위 css/style 삽입 -->
+  <style>
+    body {
+      margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #6a1b9a;
+      padding: 1rem 2rem 1rem 1rem;
+      color: #fff;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 5px;
+      transition: background 0.15s;
+    }
+    nav a.active, nav a:hover {
+      background: #fff;
+      color: #6a1b9a;
+    }
+    main {
+      max-width: 700px;
+      background: #fff;
+      margin: 2rem auto;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #6a1b9a22;
+      padding: 2rem;
+    }
+    h1 {
+      font-size:2.8rem;
+      margin-bottom:0.7rem;
+    }
+    p {
+      font-size:1.1rem;
+      margin-bottom:1.2rem;
+    }
+    a.link {
+      color: #6a1b9a;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; padding: 1rem;}
+      nav a {margin-left:1rem; font-size:1rem;}
+      main {padding:1rem;}
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,14 +73,11 @@
       <a href="contact.html" id="nav-contact" class="active">Contact</a>
     </nav>
   </header>
+
   <main>
     <h1>Contact</h1>
-    <p>
-      <strong>Email:</strong> <a href="mailto:support@qbruby.com">support@qbruby.com</a>
-    </p>
-    <p>
-      기타 문의 사항은 이메일로 연락 주세요.
-    </p>
+    <p><strong>Email:</strong> <a href="mailto:support@qbruby.com" class="link">support@qbruby.com</a></p>
+    <p>기타 문의 사항은 이메일로 연락 주세요.</p>
   </main>
 </body>
 </html>
