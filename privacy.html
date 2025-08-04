@@ -41,6 +41,28 @@
     nav a:hover {
       background: #7f3adf;
     }
+    .lang-switch {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .lang-switch button {
+      border: none;
+      background: transparent;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 3px;
+      transition: background-color 0.3s;
+      margin-left: 5px;
+      font-size: 1rem;
+    }
+    .lang-switch button.active,
+    .lang-switch button:hover {
+      background: white;
+      color: #6a1b9a;
+    }
     main {
       max-width: 700px;
       background: #fff;
@@ -69,7 +91,7 @@
     footer {
       text-align: center;
       padding: 1rem 1rem 2rem 1rem;
-      font-size: 0.85rem;
+      font-size: 0.93rem;
       color: #666;
       background: #f9f9f9;
       border-top: 1px solid #ddd;
@@ -83,6 +105,11 @@
       header { flex-direction: column; align-items: flex-start; padding: 1rem;}
       nav a { margin-left: 1rem; font-size: 1rem; }
       main { padding: 1rem; margin: 1rem; }
+      .bizinfo { font-size: 0.96em; padding: 10px; }
+      .lang-switch {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -135,6 +162,16 @@
   <footer>
     &copy; 2025 QbRuby Co., Ltd. All rights reserved.<br />
     <a href="privacy.html" data-lang-key="privacy-link">Privacy Policy (개인정보처리방침)</a>
+    <div class="bizinfo" id="bizinfo">
+      <strong data-lang-key="bizinfo-company">회사명:</strong> 주식회사 큐비루비 (QbRuby Co., Ltd.)<br>
+      <strong data-lang-key="bizinfo-ceo">대표자:</strong> 허일강 (Il Kang Heo)<br>
+      <strong data-lang-key="bizinfo-brn">사업자등록번호:</strong> 2628803113&nbsp;
+      <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2628803113" target="_blank" style="color:#6a1b9a;" data-lang-key="bizinfo-lookup">[사업자정보확인]</a><br>
+      <strong data-lang-key="bizinfo-license">통신판매업 신고번호:</strong> 2025-수원팔달-0586<br>
+      <strong data-lang-key="bizinfo-address">주소:</strong> 경기도 수원시 팔달구 수성로101번길20 대우아파트 123동 102호<br>
+      <strong data-lang-key="bizinfo-phone">고객센터 전화번호:</strong> 010-4671-6499<br>
+      <strong data-lang-key="bizinfo-email">이메일:</strong> <a href="mailto:support@qbruby.com" style="color:#6a1b9a;">support@qbruby.com</a>
+    </div>
   </footer>
 
   <script>
