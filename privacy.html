@@ -25,6 +25,10 @@
       font-size: 1.8rem;
       letter-spacing: 1px;
     }
+    nav {
+      display: flex;
+      align-items: center;
+    }
     nav a {
       color: #fff;
       margin-left: 1.5rem;
@@ -86,95 +90,106 @@
   <header>
     <div class="logo">QbRuby</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="apps.html">Apps</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-lang-key="nav-home">Home</a>
+      <a href="apps.html" data-lang-key="nav-apps">Apps</a>
+      <a href="contact.html" data-lang-key="nav-contact">Contact</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-ko" onclick="setLang('ko')">KR</button>
+    </div>
   </header>
+
   <main>
-    <h1>개인정보처리방침</h1>
-    <p>
-      QbRuby Co., Ltd.('www.qbruby.com' 이하 '회사')은 개인정보 보호법 등 관련 법령을 준수하며, 이용자의 개인정보를 소중히 다루고 있습니다. 본 개인정보처리방침은 2025년 8월 4일부터 적용되며, 회사가 처리하는 개인정보의 항목, 이용 목적, 보유 및 이용기간, 권리와 의무 등을 설명합니다.
+    <h1 data-lang-key="privacy-title">Privacy Policy</h1>
+    <p data-lang-key="privacy-intro">
+      QbRuby Co., Ltd. ("Company") respects your privacy and is committed to protecting your personal information. This privacy policy describes how we collect, use, and disclose your information.
     </p>
 
-    <h2>1. 개인정보의 처리 목적</h2>
-    <p>회사는 다음의 목적을 위해 최소한의 개인정보를 처리합니다. 처리한 개인정보는 아래 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 관련 법령에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
-    <ul>
-      <li>고객 문의 및 상담 응대</li>
-      <li>서비스 및 콘텐츠(게임/앱 등) 제공</li>
-      <li>법령 등 규정에 따른 각종 의무 이행 및 분쟁 조정</li>
-    </ul>
-
-    <h2>2. 처리하는 개인정보 항목</h2>
-    <ul>
-      <li>필수항목: 이메일 주소, 이름</li>
-      <li>선택항목: 문의 또는 지원 과정에서 이용자가 자발적으로 제공하는 정보(연락처 등)</li>
-      <li>서비스 이용과정에서 자동 수집: 서비스 이용기록, 접속 IP, 기기 정보(쿠키 등 비식별화 정보 포함)</li>
-    </ul>
-
-    <h2>3. 개인정보의 처리 및 보유 기간</h2>
-    <ul>
-      <li>이용자 문의/상담 및 서비스 제공을 위해 수집한 개인정보: 목적 달성 후 즉시 파기</li>
-      <li>관련 법령에 따라 보존해야 하는 정보는 해당 기간까지 보관(예: 소비자 분쟁해결기록, 전자상거래 등에서의 표시/광고에 관한 기록 등)</li>
-    </ul>
-
-    <h2>4. 개인정보의 제3자 제공</h2>
-    <p>회사는 원칙적으로 이용자의 개인정보를 외부에 제공하지 않으며, 법령에 따른 경우를 제외하고는 사전 동의 없이 제3자에게 제공하지 않습니다.</p>
-
-    <h2>5. 개인정보 처리의 위탁</h2>
-    <p>원활한 서비스 제공을 위해 필요한 경우 개인정보 처리 업무 일부를 외부 전문업체에 위탁할 수 있으며, 이 경우 사전에 이용자에게 고지하고 동의를 받습니다. <br>
-    현재 위탁하고 있는 내역은 없습니다.</p>
-
-    <h2>6. 이용자 및 법정대리인의 권리와 행사 방법</h2>
-    <ul>
-      <li>이용자는 언제든 본인의 개인정보 열람, 정정, 삭제, 처리정지 요구를 할 수 있습니다.</li>
-      <li>만 14세 미만 아동의 경우 법정대리인이 위 권리를 행사할 수 있습니다.</li>
-      <li>요청은 이메일(support@qbruby.com)로 접수 가능하며, 회사는 지체 없이 조치하겠습니다.</li>
-    </ul>
-
-    <h2>7. 개인정보의 파기 절차 및 방법</h2>
-    <ul>
-      <li>개인정보는 처리 목적 달성 후 즉시 파기합니다.</li>
-      <li>전자적 파일 형태는 복구 및 재생할 수 없도록 기술적 방법으로, 종이 문서는 분쇄 또는 소각하여 파기합니다.</li>
-    </ul>
-
-    <h2>8. 개인정보의 안전성 확보 조치</h2>
-    <ul>
-      <li>개인정보에 대한 접근 권한 통제</li>
-      <li>최소한의 인원에 의한 관리</li>
-      <li>보안프로그램 및 암호화 적용</li>
-      <li>정기적 점검 및 교육 실시</li>
-    </ul>
-
-    <h2>9. 개인정보 자동 수집 장치의 설치∙운영 및 거부</h2>
-    <p>회사는 웹사이트 또는 앱 서비스 운영에 쿠키 등 자동 수집장치를 사용할 수 있으며, 이용자는 브라우저 설정을 통해 쿠키 저장을 거부할 수 있습니다.</p>
-
-    <h2>10. 개인정보 보호책임자 및 문의처</h2>
-    <p>회사는 개인정보 처리와 관련된 문의 및 불만 처리, 피해 구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
-    <ul>
-      <li>개인정보 보호책임자: 대표자</li>
-      <li>이메일: <a href="mailto:support@qbruby.com">support@qbruby.com</a></li>
-    </ul>
-
-    <h2>11. 권익침해 구제방법</h2>
-    <p>기타 개인정보 침해에 대하여 상담이 필요한 경우 아래 기관에 문의하실 수 있습니다.
-      <ul>
-        <li>개인정보침해신고센터: (국번없이) 118, privacy.kisa.or.kr</li>
-        <li>개인정보분쟁조정위원회: (국번없이) 1833-6972, www.kopico.go.kr</li>
-        <li>대검찰청 사이버범죄수사단: (국번없이) 1301, www.spo.go.kr</li>
-        <li>경찰청 사이버수사국: (국번없이) 182, ecrm.cyber.go.kr</li>
-      </ul>
+    <h2 data-lang-key="privacy-section1-title">1. Personal Information We Collect</h2>
+    <p data-lang-key="privacy-section1-text">
+      We collect minimum required information such as email address and name for inquiries and service provision.
     </p>
 
-    <h2>12. 개인정보처리방침의 변경</h2>
-    <ul>
-      <li>본 방침은 2025년 8월 4일자로 제정·시행됩니다.</li>
-      <li>내용 변경 시 별도의 공지 없이 이 페이지를 통해 안내합니다.</li>
-    </ul>
+    <h2 data-lang-key="privacy-section2-title">2. Purpose of Processing Personal Information</h2>
+    <p data-lang-key="privacy-section2-text">
+      To provide services, respond to inquiries, and comply with legal obligations.
+    </p>
+
+    <h2 data-lang-key="privacy-section3-title">3. Retention Period of Personal Information</h2>
+    <p data-lang-key="privacy-section3-text">
+      We retain your personal information only as long as necessary for the stated purposes or as required by law.
+    </p>
+
+    <h2 data-lang-key="privacy-section4-title">4. Your Rights and How to Exercise Them</h2>
+    <p data-lang-key="privacy-section4-text">
+      You have the right to access, correct, delete your personal information, and to request a suspension of processing. Requests can be sent via email.
+    </p>
+
+    <h2 data-lang-key="privacy-section5-title">5. Contact Information</h2>
+    <p data-lang-key="privacy-section5-text">
+      For privacy inquiries, please contact us at <a href="mailto:support@qbruby.com">support@qbruby.com</a>.
+    </p>
   </main>
+
   <footer>
     &copy; 2025 QbRuby Co., Ltd. All rights reserved.<br />
-    <a href="privacy.html">Privacy Policy (개인정보처리방침)</a>
+    <a href="privacy.html" data-lang-key="privacy-link">Privacy Policy (개인정보처리방침)</a>
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "nav-home": "Home",
+        "nav-apps": "Apps",
+        "nav-contact": "Contact",
+        "privacy-title": "Privacy Policy",
+        "privacy-intro": "QbRuby Co., Ltd. (\"Company\") respects your privacy and is committed to protecting your personal information. This privacy policy describes how we collect, use, and disclose your information.",
+        "privacy-section1-title": "1. Personal Information We Collect",
+        "privacy-section1-text": "We collect minimum required information such as email address and name for inquiries and service provision.",
+        "privacy-section2-title": "2. Purpose of Processing Personal Information",
+        "privacy-section2-text": "To provide services, respond to inquiries, and comply with legal obligations.",
+        "privacy-section3-title": "3. Retention Period of Personal Information",
+        "privacy-section3-text": "We retain your personal information only as long as necessary for the stated purposes or as required by law.",
+        "privacy-section4-title": "4. Your Rights and How to Exercise Them",
+        "privacy-section4-text": "You have the right to access, correct, delete your personal information, and to request a suspension of processing. Requests can be sent via email.",
+        "privacy-section5-title": "5. Contact Information",
+        "privacy-section5-text": "For privacy inquiries, please contact us at <a href=\"mailto:support@qbruby.com\">support@qbruby.com</a>.",
+        "privacy-link": "Privacy Policy"
+      },
+      ko: {
+        "nav-home": "홈",
+        "nav-apps": "앱 소개",
+        "nav-contact": "문의",
+        "privacy-title": "개인정보처리방침",
+        "privacy-intro": "큐비루비 주식회사('회사')는 이용자의 개인정보 보호에 최선을 다하고 있으며, 본 방침은 개인정보 수집, 이용, 제공에 관한 내용을 설명합니다.",
+        "privacy-section1-title": "1. 수집하는 개인정보 항목",
+        "privacy-section1-text": "이메일 주소, 이름 등 문의 및 서비스 제공에 필요한 최소한의 정보를 수집합니다.",
+        "privacy-section2-title": "2. 개인정보 처리 목적",
+        "privacy-section2-text": "서비스 제공, 문의 대응, 법적 의무 준수를 위해 개인정보를 처리합니다.",
+        "privacy-section3-title": "3. 개인정보 보유 및 이용 기간",
+        "privacy-section3-text": "이용 목적 달성 또는 법적 요구 기간 동안 개인정보를 보유합니다.",
+        "privacy-section4-title": "4. 정보주체의 권리 및 행사 방법",
+        "privacy-section4-text": "개인정보 열람, 정정, 삭제 및 처리 정지 요청 권리가 있으며, 이메일로 요청 가능합니다.",
+        "privacy-section5-title": "5. 연락처",
+        "privacy-section5-text": "개인정보 관련 문의는 <a href=\"mailto:support@qbruby.com\">support@qbruby.com</a> 으로 연락해 주세요.",
+        "privacy-link": "개인정보처리방침"
+      }
+    };
+
+    function setLang(lang) {
+      Object.keys(translations[lang]).forEach(key => {
+        const el = document.querySelector(`[data-lang-key=${key}]`);
+        if(el) el.innerHTML = translations[lang][key];
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+      setLang(userLang.startsWith('ko') ? 'ko' : 'en');
+    });
+  </script>
 </body>
 </html>
