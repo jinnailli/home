@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <title>QbRuby Co., Ltd. - Apps</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="canonical" href="https://www.qbruby.com/apps.html"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      margin: 0; 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f4f4f4;
       color: #333;
       line-height: 1.5;
@@ -20,11 +19,16 @@
       background: #6a1b9a;
       padding: 1rem 2rem 1rem 1rem;
       color: #fff;
+      position: relative;
     }
     .logo {
       font-size: 2rem;
       font-weight: bold;
       letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
     }
     nav a {
       color: #fff;
@@ -38,6 +42,28 @@
     }
     nav a.active, nav a:hover {
       background: #fff;
+      color: #6a1b9a;
+    }
+    .lang-switch {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .lang-switch button {
+      border: none;
+      background: transparent;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 3px;
+      transition: background-color 0.3s;
+      margin-left: 5px;
+      font-size: 1rem;
+    }
+    .lang-switch button.active,
+    .lang-switch button:hover {
+      background: white;
       color: #6a1b9a;
     }
     main {
@@ -78,9 +104,23 @@
       text-decoration: underline;
     }
     @media (max-width: 600px) {
-      header { flex-direction: column; align-items: flex-start; padding: 1rem; }
-      nav a { margin-left: 1rem; font-size: 1rem; }
-      main { padding: 1rem; margin: 1rem; }
+      header { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 1rem; 
+      }
+      nav a { 
+        margin-left: 1rem; 
+        font-size: 1rem; 
+      }
+      main { 
+        padding: 1rem; 
+        margin: 1rem; 
+      }
+      .lang-switch {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -88,31 +128,73 @@
   <header>
     <div class="logo">QbRuby</div>
     <nav>
-      <a href="index.html" id="nav-home">Home</a>
-      <a href="apps.html" id="nav-apps" class="active">Apps</a>
-      <a href="contact.html" id="nav-contact">Contact</a>
+      <a href="index.html" id="nav-home" data-lang-key="nav-home">Home</a>
+      <a href="apps.html" id="nav-apps" class="active" data-lang-key="nav-apps">Apps</a>
+      <a href="contact.html" id="nav-contact" data-lang-key="nav-contact">Contact</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-ko" onclick="setLang('ko')">KR</button>
+    </div>
   </header>
 
   <main>
-    <h1>Our Games & Apps</h1>
-    <p>저희가 만든 게임/앱 목록입니다.</p>
+    <h1 data-lang-key="apps-title">Our Games & Apps</h1>
+    <p data-lang-key="apps-intro">Here are some of the games/apps we have created.</p>
 
     <section>
-      <h2>큐브모험 (Cube Adventure)</h2>
-      <p>
-        쉽고 중독성있는 퍼즐 게임. 논리력과 창의력이 필요해요!<br />
-        <a href="#" class="link" target="_blank" rel="noopener noreferrer">앱스토어 바로가기</a> | 
-        <a href="#" class="link" target="_blank" rel="noopener noreferrer">구글플레이 바로가기</a>
+      <h2 data-lang-key="game1-title">Cube Adventure (큐브모험)</h2>
+      <p data-lang-key="game1-desc">
+        A fun and addictive puzzle game requiring logic and creativity!<br />
+        <a href="#" class="link" target="_blank" rel="noopener noreferrer" data-lang-key="appstore-link">App Store</a> | 
+        <a href="#" class="link" target="_blank" rel="noopener noreferrer" data-lang-key="googleplay-link">Google Play</a>
       </p>
     </section>
 
-    <!-- 더 많은 게임/앱 정보를 추가 가능 -->
   </main>
 
   <footer>
     &copy; 2025 QbRuby Co., Ltd. All rights reserved.<br />
-    <a href="privacy.html">Privacy Policy (개인정보처리방침)</a>
+    <a href="privacy.html" data-lang-key="privacy-link">Privacy Policy (개인정보처리방침)</a>
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "nav-home": "Home",
+        "nav-apps": "Apps",
+        "nav-contact": "Contact",
+        "apps-title": "Our Games & Apps",
+        "apps-intro": "Here are some of the games/apps we have created.",
+        "game1-title": "Cube Adventure (큐브모험)",
+        "game1-desc": "A fun and addictive puzzle game requiring logic and creativity!<br><a href=\"#\" class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\">App Store</a> | <a href=\"#\" class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\">Google Play</a>",
+        "privacy-link": "Privacy Policy"
+      },
+      ko: {
+        "nav-home": "홈",
+        "nav-apps": "앱 소개",
+        "nav-contact": "문의",
+        "apps-title": "저희 게임과 앱",
+        "apps-intro": "저희가 만든 게임과 앱을 소개합니다.",
+        "game1-title": "큐브모험 (Cube Adventure)",
+        "game1-desc": "논리력과 창의력이 필요한 중독성 강한 퍼즐 게임입니다!<br><a href=\"#\" class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\">앱스토어</a> | <a href=\"#\" class=\"link\" target=\"_blank\" rel=\"noopener noreferrer\">구글플레이</a>",
+        "privacy-link": "개인정보처리방침"
+      }
+    };
+
+    function setLang(lang) {
+      Object.keys(translations[lang]).forEach(key => {
+        const el = document.querySelector(`[data-lang-key=${key}]`);
+        if(el) el.innerHTML = translations[lang][key];
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+      setLang(userLang.startsWith('ko') ? 'ko' : 'en');
+    });
+  </script>
 </body>
 </html>
