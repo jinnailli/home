@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <title>QbRuby Co., Ltd. - Contact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="canonical" href="https://www.qbruby.com/contact.html"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       margin: 0; 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f4f4f4;
       color: #333;
       line-height: 1.5;
@@ -20,11 +19,16 @@
       background: #6a1b9a;
       padding: 1rem 2rem 1rem 1rem;
       color: #fff;
+      position: relative;
     }
     .logo {
       font-size: 2rem;
       font-weight: bold;
       letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
     }
     nav a {
       color: #fff;
@@ -38,6 +42,28 @@
     }
     nav a.active, nav a:hover {
       background: #fff;
+      color: #6a1b9a;
+    }
+    .lang-switch {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .lang-switch button {
+      border: none;
+      background: transparent;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 3px;
+      transition: background-color 0.3s;
+      margin-left: 5px;
+      font-size: 1rem;
+    }
+    .lang-switch button.active,
+    .lang-switch button:hover {
+      background: white;
       color: #6a1b9a;
     }
     main {
@@ -74,9 +100,23 @@
       text-decoration: underline;
     }
     @media (max-width: 600px) {
-      header { flex-direction: column; align-items: flex-start; padding: 1rem; }
-      nav a { margin-left: 1rem; font-size: 1rem; }
-      main { padding: 1rem; margin: 1rem; }
+      header { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 1rem; 
+      }
+      nav a { 
+        margin-left: 1rem; 
+        font-size: 1rem; 
+      }
+      main { 
+        padding: 1rem; 
+        margin: 1rem; 
+      }
+      .lang-switch {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -84,21 +124,64 @@
   <header>
     <div class="logo">QbRuby</div>
     <nav>
-      <a href="index.html" id="nav-home">Home</a>
-      <a href="apps.html" id="nav-apps">Apps</a>
-      <a href="contact.html" id="nav-contact" class="active">Contact</a>
+      <a href="index.html" id="nav-home" data-lang-key="nav-home">Home</a>
+      <a href="apps.html" id="nav-apps" data-lang-key="nav-apps">Apps</a>
+      <a href="contact.html" id="nav-contact" class="active" data-lang-key="nav-contact">Contact</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Language switcher">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-ko" onclick="setLang('ko')">KR</button>
+    </div>
   </header>
 
   <main>
-    <h1>Contact</h1>
-    <p><strong>Email:</strong> <a href="mailto:support@qbruby.com" class="link">support@qbruby.com</a></p>
-    <p>기타 문의 사항은 이메일로 연락 주세요.</p>
+    <h1 data-lang-key="contact-title">Contact</h1>
+    <p><strong data-lang-key="email-label">Email:</strong> <a href="mailto:support@qbruby.com" class="link" data-lang-key="email-address">support@qbruby.com</a></p>
+    <p data-lang-key="contact-desc">For other inquiries, please contact us by email.</p>
   </main>
 
   <footer>
     &copy; 2025 QbRuby Co., Ltd. All rights reserved.<br />
-    <a href="privacy.html">Privacy Policy (개인정보처리방침)</a>
+    <a href="privacy.html" data-lang-key="privacy-link">Privacy Policy (개인정보처리방침)</a>
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "nav-home": "Home",
+        "nav-apps": "Apps",
+        "nav-contact": "Contact",
+        "contact-title": "Contact",
+        "email-label": "Email:",
+        "email-address": "support@qbruby.com",
+        "contact-desc": "For other inquiries, please contact us by email.",
+        "privacy-link": "Privacy Policy"
+      },
+      ko: {
+        "nav-home": "홈",
+        "nav-apps": "앱 소개",
+        "nav-contact": "문의",
+        "contact-title": "문의",
+        "email-label": "이메일:",
+        "email-address": "support@qbruby.com",
+        "contact-desc": "기타 문의 사항은 이메일로 연락 주세요.",
+        "privacy-link": "개인정보처리방침"
+      }
+    };
+
+    function setLang(lang) {
+      Object.keys(translations[lang]).forEach(key => {
+        const el = document.querySelector(`[data-lang-key=${key}]`);
+        if(el) el.innerHTML = translations[lang][key];
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+      setLang(userLang.startsWith('ko') ? 'ko' : 'en');
+    });
+  </script>
 </body>
 </html>
