@@ -90,7 +90,7 @@
     footer {
       text-align: center;
       padding: 1rem 1rem 2rem 1rem;
-      font-size: 0.85rem;
+      font-size: 0.93rem;
       color: #666;
       background: #f9f9f9;
       border-top: 1px solid #ddd;
@@ -99,6 +99,18 @@
       color: #6a1b9a;
       text-decoration: underline;
     }
+    .bizinfo {
+      margin: 14px auto 0 auto;
+      display: inline-block;
+      text-align: left;
+      color: #444;
+      font-size: 0.98em;
+      background: #f7f7fa;
+      border-radius: 6px;
+      padding: 10px 18px 10px 18px;
+      line-height: 1.6;
+    }
+    .bizinfo strong { display:inline-block; min-width:90px;}
     @media (max-width: 600px) {
       header { 
         flex-direction: column; 
@@ -117,6 +129,7 @@
         margin-left: 0;
         margin-top: 10px;
       }
+      .bizinfo { font-size: 0.96em; padding:10px; }
     }
   </style>
 </head>
@@ -143,6 +156,16 @@
   <footer>
     &copy; 2025 QbRuby Co., Ltd. All rights reserved.<br />
     <a href="privacy.html" data-lang-key="privacy-link">Privacy Policy (개인정보처리방침)</a>
+    <div class="bizinfo" id="bizinfo">
+      <strong data-lang-key="bizinfo-company">회사명:</strong> 주식회사 큐비루비 (QbRuby Co., Ltd.)<br>
+      <strong data-lang-key="bizinfo-ceo">대표자:</strong> 허일강 (Il Kang Heo)<br>
+      <strong data-lang-key="bizinfo-brn">사업자등록번호:</strong> 2628803113&nbsp;
+      <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2628803113" target="_blank" style="color:#6a1b9a;" data-lang-key="bizinfo-lookup">[사업자정보확인]</a><br>
+      <strong data-lang-key="bizinfo-license">통신판매업 신고번호:</strong> 2025-수원팔달-0586<br>
+      <strong data-lang-key="bizinfo-address">주소:</strong> 경기도 수원시 팔달구 수성로101번길20 대우아파트 123동 102호<br>
+      <strong data-lang-key="bizinfo-phone">고객센터 전화번호:</strong> 010-4671-6499<br>
+      <strong data-lang-key="bizinfo-email">이메일:</strong> <a href="mailto:support@qbruby.com" style="color:#6a1b9a;">support@qbruby.com</a>
+    </div>
   </footer>
 
   <script>
@@ -155,7 +178,15 @@
         "email-label": "Email:",
         "email-address": "support@qbruby.com",
         "contact-desc": "For other inquiries, please contact us by email.",
-        "privacy-link": "Privacy Policy"
+        "privacy-link": "Privacy Policy",
+        "bizinfo-company": "Company:",
+        "bizinfo-ceo": "CEO:",
+        "bizinfo-brn": "Business Reg. No.:",
+        "bizinfo-lookup": "[Business Info Check]",
+        "bizinfo-license": "E-commerce License No.:",
+        "bizinfo-address": "Address:",
+        "bizinfo-phone": "Customer Service:",
+        "bizinfo-email": "Email:"
       },
       ko: {
         "nav-home": "홈",
@@ -165,7 +196,15 @@
         "email-label": "이메일:",
         "email-address": "support@qbruby.com",
         "contact-desc": "기타 문의 사항은 이메일로 연락 주세요.",
-        "privacy-link": "개인정보처리방침"
+        "privacy-link": "개인정보처리방침",
+        "bizinfo-company": "회사명:",
+        "bizinfo-ceo": "대표자:",
+        "bizinfo-brn": "사업자등록번호:",
+        "bizinfo-lookup": "[사업자정보확인]",
+        "bizinfo-license": "통신판매업 신고번호:",
+        "bizinfo-address": "주소:",
+        "bizinfo-phone": "고객센터 전화번호:",
+        "bizinfo-email": "이메일:"
       }
     };
 
