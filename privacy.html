@@ -241,8 +241,15 @@
       document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
     }
     window.addEventListener('DOMContentLoaded', () => {
-      const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
-      setLang(userLang.startsWith('ko') ? 'ko' : 'en');
+      const requestedLang = new URLSearchParams(window.location.search).get('lang');
+      if (requestedLang === 'ko' || requestedLang === 'en') {
+        setLang(requestedLang);
+      } else if (requestedLang) {
+        setLang('en');
+      } else {
+        const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+        setLang(userLang.startsWith('ko') ? 'ko' : 'en');
+      }
     });
   </script>
 </body>
