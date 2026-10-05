@@ -122,6 +122,7 @@
 
   function syncWithHash() {
     const match = location.hash.match(/^#gallery-([a-z0-9-]+)-(\d+)$/);
+    if (match && match[1] === 'cube-project') match[1] = 'flickcube';
     if (match && !groups.has(match[1])) {
       const choice = document.getElementById(match[1]);
       if (choice && choice.classList.contains('game-choice')) {
