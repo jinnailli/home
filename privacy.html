@@ -90,8 +90,11 @@
       <section class="game-policy-list">
         <h2>11. 게임별 적용 범위와 개인정보처리방침</h2>
         <p>이 공통 방침은 홈페이지 이용과 회사에 보내는 문의 이메일에 적용됩니다. Pulse Block과 FlickCube에 관한 이메일 문의도 동일한 문의 처리 기준을 따릅니다.</p>
-        <p>JewelDoku 앱의 개인정보 처리 내용은 아래의 전용 정책을 확인해 주세요.</p>
-        <ul><li><a href="privacy/jeweldoku.html">JewelDoku 개인정보처리방침 보기</a></li></ul>
+        <p>JewelDoku 및 FlickCube 앱의 개인정보 처리 내용은 아래의 전용 정책을 확인해 주세요. FlickCube 전용 정책은 광고 없는 2.0 출시계열에 적용됩니다.</p>
+        <ul>
+          <li><a href="privacy/jeweldoku.html">JewelDoku 개인정보처리방침 보기</a></li>
+          <li><a href="privacy/flickcube.html">FlickCube 2.0 개인정보처리방침 보기</a></li>
+        </ul>
       </section>
     </div>
 
@@ -162,8 +165,11 @@
       <section class="game-policy-list">
         <h2>11. Game-Specific Scope and Privacy Policies</h2>
         <p>This general policy applies to website use and inquiry emails sent to the Company, including inquiries about Pulse Block and FlickCube.</p>
-        <p>For information handling within the JewelDoku app, see its dedicated policy below.</p>
-        <ul><li><a href="privacy/jeweldoku.html">View JewelDoku Privacy Policy</a></li></ul>
+        <p>For information handling within JewelDoku and FlickCube, see the dedicated policies below. The FlickCube policy applies to its ad-free 2.0 release series.</p>
+        <ul>
+          <li><a href="privacy/jeweldoku.html">View JewelDoku Privacy Policy</a></li>
+          <li><a href="privacy/flickcube.html">View FlickCube 2.0 Privacy Policy</a></li>
+        </ul>
       </section>
     </div>
   </main>
@@ -233,7 +239,9 @@
       document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
       document.getElementById('btn-ko').setAttribute('aria-pressed', String(lang === 'ko'));
       document.querySelectorAll('.game-policy-list a').forEach(link => {
-        link.href = 'privacy/jeweldoku.html?lang=' + lang;
+        const destination = new URL(link.getAttribute('href'), window.location.href);
+        destination.searchParams.set('lang', lang);
+        link.href = destination.pathname + destination.search + destination.hash;
       });
     }
     window.addEventListener('DOMContentLoaded', () => {
