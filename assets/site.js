@@ -6,6 +6,7 @@
   const caption = document.getElementById('gallery-caption');
   const close = document.getElementById('gallery-close');
   const groups = {
+    'slium': {name:'SLIUM', images:[["slium/01-main-menu.png", "Main menu", "메인 메뉴"], ["slium/02-gameplay.png", "Slime board", "슬라임 보드"], ["slium/03-merge-preview.png", "Merge preview", "합성 미리보기"], ["slium/04-slime-upgrade.png", "Slime upgrade", "슬라임 성장"], ["slium/05-assistant-ability.png", "Assistant ability", "조수 능력"], ["slium/06-stage-clear.png", "Research complete", "연구 완료"], ["slium/07-shop.png", "In-game shop", "게임 내 상점"], ["slium/08-pack-opening.png", "Accessory pack", "액세서리 팩"], ["slium/09-accessory-choices.png", "Accessory choices", "액세서리 선택"], ["slium/10-equipment-preview.png", "Equipment preview", "장착 미리보기"]]},
     'jeweldoku': {name:'JewelDoku', images:[
       ['JewelDoku1.jpeg','Main menu','메인 메뉴'], ['JewelDoku2.jpeg','Puzzle board','퍼즐 보드'],
       ['JewelDoku3.jpeg','Jewels found','보석 발견'], ['JewelDoku4.jpeg','Puzzle regions','퍼즐 영역'],
