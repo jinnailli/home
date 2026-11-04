@@ -37,8 +37,8 @@
 
 /* Four-game homepage screenshot composition. */
 .hero-art-four .hero-shot{width:29%}
-.hero-art-four .shot-01{left:7%;top:26%;transform:rotate(-11deg);z-index:1}
-.hero-art-four .shot-02{left:25%;top:16%;transform:rotate(-4deg);z-index:2}
-.hero-art-four .shot-03{left:46%;right:auto;top:24%;transform:rotate(5deg);z-index:3}
-.hero-art-four .shot-04{left:65%;top:22%;transform:rotate(11deg);z-index:4}
-@media(max-width:600px){.hero-art-four{height:clamp(390px,90vw,540px)}.hero-art-four .hero-shot{width:30%;border-radius:12px}.hero-art-four .shot-01{left:7%;top:25%}.hero-art-four .shot-02{left:24%;top:15%}.hero-art-four .shot-03{left:45%;top:24%}.hero-art-four .shot-04{left:63%;top:24%}.hero-footnote>span:last-child{line-height:1.6}}
+.hero-art-four .shot-01{left:7%;top:12%;transform:rotate(-11deg);z-index:4}
+.hero-art-four .shot-02{left:25%;top:22%;transform:rotate(-4deg);z-index:3}
+.hero-art-four .shot-03{left:46%;right:auto;top:30%;transform:rotate(5deg);z-index:2}
+.hero-art-four .shot-04{left:65%;top:34%;transform:rotate(11deg);z-index:1}
+@media(max-width:600px){.hero-art-four{height:clamp(390px,90vw,540px)}.hero-art-four .hero-shot{width:30%;border-radius:12px}.hero-art-four .shot-01{left:7%;top:12%}.hero-art-four .shot-02{left:24%;top:22%}.hero-art-four .shot-03{left:45%;top:30%}.hero-art-four .shot-04{left:63%;top:34%}.hero-footnote>span:last-child{line-height:1.6}}
